@@ -39,31 +39,31 @@ variable "azurerm_function_app_function_language" {
 }
 variable "test_data" {
   default = <<EOF
-  "jsonencode({
+  {
     "name" = "Azure"
-  })"
+  }
 EOF
 }
-#variable "config_json" {
-#  default = <<EOF
-#  "jsonencode({
-#    "bindings" = [
-#      {
-#        "authLevel" = "function"
-#        "direction" = "in"
-#        "methods" = [
-#          "get",
-#          "post",
-#        ]
-#        "name" = "req"
-#        "type" = "httpTrigger"
-#      },
-#      {
-#        "direction" = "out"
-#        "name"      = "$return"
-#        "type"      = "http"
-#      },
-#    ]
-#  })"
-#EOF
-#}
+variable "config_json" {
+  default = <<EOF
+  {
+    "bindings" = [
+      {
+        "authLevel" = "function"
+        "direction" = "in"
+        "methods" = [
+          "get",
+          "post",
+        ]
+        "name" = "req"
+        "type" = "httpTrigger"
+      },
+      {
+        "direction" = "out"
+        "name"      = "$return"
+        "type"      = "http"
+      },
+    ]
+  }
+EOF
+}

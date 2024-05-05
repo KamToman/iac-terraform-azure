@@ -45,26 +45,6 @@ resource "azurerm_function_app_function" "example" {
   name            = var.azurerm_function_app_function_name
   function_app_id = azurerm_linux_function_app.example.id
   language        = var.azurerm_function_app_function_language
-  test_data = var.test_data
-  config_json = jsonencode({
-    "bindings" = [
-      {
-        "authLevel" = "function"
-        "direction" = "in"
-        "methods" = [
-          "get",
-          "post",
-        ]
-        "name" = "req"
-        "type" = "httpTrigger"
-      },
-      {
-        "direction" = "out"
-        "name"      = "$return"
-        "type"      = "http"
-      },
-    ]
-  })
-
-  #Tried to make a var with json function nested like for test_data, but with error
+  test_data = jsonencode(var.test_data)
+  config_json = jsonencode(var.config_json)
 }
