@@ -1,5 +1,5 @@
 variable "resource_group_name" {
-  default = "any_name"
+  default = "example-resources"
 }
 variable "resource_group_location" {
   default = "West Europe"
